@@ -1,0 +1,16 @@
+{
+	"name":"wizard-battle",
+	"version":"0.0.0",
+	"main":"index.html",
+	"window":{
+		"title":"Wizard Battle",
+		"icon":"resources/icon.png",
+		"toolbar":false,
+		"frame":true,
+		"width":800,
+		"height":500,
+		"position": "center"
+	},
+	"node":false,
+	"single-instance":false	
+}
