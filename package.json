@@ -1,9 +1,9 @@
 {
-	"name":"wizard-battle",
+	"name":"programagos",
 	"version":"0.0.0",
 	"main":"index.html",
 	"window":{
-		"title":"Wizard Battle",
+		"title":"Programagos",
 		"icon":"resources/icon.png",
 		"toolbar":false,
 		"frame":true,
