@@ -2,6 +2,7 @@
 
 window.onload = function(){
 	global.document = document;
+	global.window = window;
 	var Engine = require('Engine');
 	var Composition = require('Composition');
 	var terrain = require('terrain');
