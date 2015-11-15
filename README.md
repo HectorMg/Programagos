@@ -1,13 +1,19 @@
 # Programagos
 Proyecto final de intro
 
-Si navegan a un directorio donde van a guarder el proyecto desde la terminal y tienen instalado git, pueden hacer:
+## Descarga
+
+Para descargar el proyecto naveguen a un directorio donde van a querer guarderlo y desde la terminal, si tienen instalado git, pueden hacer:
 
 `git clone https://github.com/HectorMg/Programagos.git`
 
+Para correrlo tienen que descargar e instalar node-webkit o nw. Node-webkit basicamente combina un browser webkit con nodejs y provee una manera de hacer aplicaciones GUI con las librerías nativas de cada OS. Si tienen node y npm instalado pueden correr
 
-Para correrlo tienen que descargar e instalar node-webkit o nw.
-Naveguen al mismo directorio de antes y corran:
+`npm -g install nw`
+
+Si no tiene npm aquí les dejo el link al git de nw donde vienen instrucciones: [https://github.com/nwjs/nw.js/](https://github.com/nwjs/nw.js/)
+
+Una vez instalado nw, naveguen al mismo directorio de antes y corran:
 
 `nw .`
 
