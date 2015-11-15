@@ -11,6 +11,6 @@
 		"height":500,
 		"position": "center"
 	},
-	"node":false,
+	"node":true,
 	"single-instance":false	
 }
