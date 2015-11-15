@@ -10,6 +10,6 @@ window.onload = function(){
 	var main = new Composition('terrain', terrain, 'player', player);
 
 	//set to global so it can be accesed by compositions
-	engine = new Engine(new Composition('main', main));
+	global.engine = new Engine(new Composition('main', main));
 
 }
