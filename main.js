@@ -18,7 +18,8 @@ window.onload = function(){
 	//Create start level
 	var terrain = require('terrain');
 	var player = require('player');
-	var startLevel = new Composition('terrain', terrain, 'player', player);
+	var sky = require('sky');
+	var startLevel = new Composition('sky', sky, 'terrain', terrain, 'player', player);
 
 	//Create a new engine with the level startLevel and set to global so it can be accesed by nodejs
 	global.engine = new Engine(startLevel);
