@@ -20,10 +20,12 @@ window.onload = function(){
 	var player = require('player');
 	var sky = require('sky');
 	var sun = require('sun');
-	var startLevel = new Composition('sun', sun, 'sky', sky, 'terrain', terrain, 'player', player);
+	var testBall = require('testBall');
+	var startLevel = new Composition('sun', sun, 'sky', sky, 'terrain', terrain, 'player', player, 'testBall', testBall);
 
 	//Create a new engine with the level startLevel and set to global so it can be accesed by nodejs
 	global.engine = new Engine(startLevel);
+	global.engine.start();
 
 	window.addEventListener('keyup', function(e){
 		global.engine.level.propagate("keyup", [e.keyCode]);
