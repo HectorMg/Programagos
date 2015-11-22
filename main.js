@@ -9,27 +9,27 @@ window.onload = function(){
 	//Set window to global so it can be accessed by nodejs.
 	global.window = window;
 
+
 	//Import Engine.js
 	var Engine = require('Engine');
 
 	//Import Composition.js
 	var Composition = require('Composition');
 
+	//Create start level
+	var terrain = require('terrain');
+	var player = require('player');
+	var sky = require('sky');
+	var sun = require('sun');
+	var testBall = require('testBall');
+
 	//Import MainLevel.js
-	// var MainLevel = require('MainLevel');
-
-
-		//Create start level
-		var terrain = require('terrain');
-		var player = require('player');
-		var sky = require('sky');
-		var sun = require('sun');
-		var testBall = require('testBall');
-		var mainLevel = require('MainLevel');
+	var mainLevel = require('MainLevel');
 
 	//Create a new engine with the level MainLevel and set to global so it can be accesed by nodejs
 	global.engine = new Engine(mainLevel());
 	global.engine.start();
+
 
 	window.addEventListener('keyup', function(e){
 		global.engine.level.propagate("keyup", [e.keyCode]);
