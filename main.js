@@ -15,17 +15,10 @@ window.onload = function(){
 	//Import Composition.js
 	var Composition = require('Composition');
 
-	//Import MainLevel.js
-	// var MainLevel = require('MainLevel');
 
 
-		//Create start level
-		var terrain = require('terrain');
-		var player = require('player');
-		var sky = require('sky');
-		var sun = require('sun');
-		var testBall = require('testBall');
-		var mainLevel = require('MainLevel');
+	//Create start level
+	var mainLevel = require('MainLevel');
 
 	//Create a new engine with the level MainLevel and set to global so it can be accesed by nodejs
 	global.engine = new Engine(mainLevel());
