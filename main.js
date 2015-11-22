@@ -15,8 +15,6 @@ window.onload = function(){
 	//Import Composition.js
 	var Composition = require('Composition');
 
-
-
 	//Create start level
 	var mainLevel = require('MainLevel');
 
