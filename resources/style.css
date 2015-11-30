@@ -1,0 +1,96 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    background: #fff url("background.jpg") no-repeat fixed center;
+    overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+#main-menu, #credits {
+	text-align: center;
+	margin: 0 auto;
+	height: 500px;
+	width: 800px;
+}
+
+#credits {
+	display:  none;
+}
+
+h1 {
+	margin: -50px 0 50px 0;
+	font-size: 100px;
+	height: 175px;
+}
+
+h3 {
+	font-family: 'Play', sans-serif;
+	margin-bottom: 50px;
+}
+
+#progra {
+	font-family: 'Permanent Marker', cursive;
+	color: #3498db;
+}
+
+
+#magos {
+	font-family: 'Pacifico', cursive;
+	color: #e74c3c;
+	font-size: 150px;
+}
+
+#cred {
+	font-family: 'Permanent Marker', cursive;
+	color: #993333;
+}
+
+#its {
+	font-family: 'Pacifico', cursive;
+	color: #336699;
+}
+
+#areyou {
+	color: #993333;
+}
+
+#takethe {
+	color: #336699;
+}
+
+button {
+	width: 210px;
+	height:75px;
+	margin-bottom: 20px;
+	font-size: 50px;
+	font-family: 'Play', sans-serif;
+	border-radius: 10px;
+	background: #2980b9;
+	color: #c0392b;
+	border: 0;
+}
+
+button:hover {
+	cursor: pointer;
+	background: #c0392b !important;
+	color: #2980b9 !important;
+}
+
+p {
+	font-size: 20px;
+	line-height: 35px;
+	margin: 50px 0 50px 0;
+	color: #000;
+	font-family: 'Play', sans-serif;
+
+}
+
+#footer {
+	margin-top: 50px;
+	color: #fff;
+	font-size: 20px;
+	font-family: 'ABeeZee', sans-serif;
+}
