@@ -36,9 +36,21 @@ window.onload = function(){
 		// Create a new engine with the level MainLevel and set to global so it can be accesed by nodejs
 		global.engine = new Engine(mainLevel());
 		global.engine.start();
+		console.log("Starting console");
 
 		// Disappear main menu div by setting display to none
 		document.getElementById("main-menu").style.display = 'none';
+	}
+
+	// Click on Start Button on Main Menu
+	document.getElementById("startButtonCreds").onclick = function() {
+		// Create a new engine with the level MainLevel and set to global so it can be accesed by nodejs
+		global.engine = new Engine(mainLevel());
+		global.engine.start();
+		console.log("Starting console");
+
+		// Disappear credits div by setting display to none
+		document.getElementById("credits").style.display = 'none';
 	}
 
 	// Click on Credits Button on Main Menu
