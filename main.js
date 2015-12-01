@@ -31,6 +31,7 @@ window.onload = function(){
 		global.engine.level.propagate("keypress", [e.keyCode]);
 	});
 
+
 	// Click on Start Button on Main Menu
 	document.getElementById("startButton").onclick = function() {
 		// Create a new engine with the level MainLevel and set to global so it can be accesed by nodejs
@@ -71,4 +72,9 @@ window.onload = function(){
 		document.getElementById("credits").style.display = 'none';
 	}
 
+	//Shows code editor
+	document.getElementById("editor").onclick = function(){
+		document.getElementById('contain-editor').className = "container";
+		console.log("Change");
+	}
 }

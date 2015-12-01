@@ -121,14 +121,14 @@ p {
 	height: 50px;
 }
 
-#elcontenedor {
-	background: #336699;
+#contain-editor {
+	/*background: #336699;*/
 	padding: 10px;
 }
 
 #terminal {
 	background: black;
-  	color : #ffffff; 
+  	color : #ffffff;
   	font-family: 'Fira Mono';
   	padding: 5px;
 }
