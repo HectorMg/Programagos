@@ -5,10 +5,11 @@
 	"window":{
 		"title":"Programagos",
 		"icon":"resources/icon.png",
-		"toolbar":true,
-		"frame":true,
+		"toolbar":false,
 		"width":800,
 		"height":500,
+		"frame":true,
+		"resizable":false,
 		"position": "center"
 	},
 	"node":true,
