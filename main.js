@@ -73,7 +73,11 @@ window.onload = function(){
 		}
 	}
 	//Attacks
-	document.getElementById("attack-sword").onclick = function(){
+	document.getElementById("attack-sword").onmousedown = function(){
+		global.engine.level.propagate("keydown", [32]);
+	}
+
+	document.getElementById("attack-sword").onmouseup = function(){
 		global.engine.level.propagate("keyup", [32]);
 	}
 
