@@ -10,19 +10,30 @@ body {
 }
 
 #control-panel{
-	background-color: rgba(255, 0, 0, 0.1);
-	width: 100%;
+	/*background-color: rgba(255, 0, 0, 0.1);*/
+	width: 800px;
 	height: 60px;
 	padding-top: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
 }
+
 
 .hidden{
 	display: none;
 }
 
+.time-bar{
+	padding-left: 0;
+}
+
 .ui-glyph{
 	color: white;
-	margin: 10px;
+	margin: 0;
+}
+
+.new-spell{
+	background-image: url("resources/new_spell.png");
 }
 
 #main-menu, #credits {
