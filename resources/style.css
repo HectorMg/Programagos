@@ -20,10 +20,14 @@ body {
 	padding-right: 10px;
 	padding-left: 10px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 	z-index: 100;
 >>>>>>> 7c7cd8c8bac9795c785ec25ac8a3284b5c180ebd
+=======
+	z-index: 5;
+>>>>>>> 11df755f6ae1bea500daa7f9fa6a4e4d78121446
 }
 
 #pause {
@@ -120,23 +124,22 @@ body {
 	color: #336699;
 }
 
-.button {
+button {
 	width: 210px;
-	height:75px;
-	margin-bottom: 20px;
-	font-size: 50px;
+	height:40px;
 	font-family: 'Play', sans-serif;
 	border-radius: 10px;
-	background: #2980b9;
-	color: #c0392b;
-	border: 0;
 }
 
-.button:hover {
+.button-row{
+	margin-bottom: 10px;
+}
+
+/*.button:hover {
 	cursor: pointer;
 	background: #c0392b !important;
 	color: #2980b9 !important;
-}
+}*/
 
 p {
 	font-size: 20px;

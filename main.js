@@ -19,36 +19,6 @@ window.onload = function(){
 	//Create start level
 	var mainLevel = require('MainLevel');
 
-	window.addEventListener('keyup', function(e){
-		global.engine.level.propagate("keyup", [e.keyCode]);
-	});
-
-	window.addEventListener('keydown', function(e){
-		global.engine.level.propagate("keydown", [e.keyCode]);
-	});
-
-	window.addEventListener('keypress', function(e){
-		global.engine.level.propagate("keypress", [e.keyCode]);
-	});
-
-	var mouseIsDown = false;
-	window.addEventListener('onmousedown', function(e){
-		mouseIsDown = true;
-		global.engine.level.propagate("mousedown", [e.clientX, e.clientY]);
-	});
-
-	window.addEventListener('onmousemove', function(e){
-		if(mouseIsDown){
-			global.engine.level.propagate("mousedrag", [e.clientX, e.clientY]);
-		}
-		global.engine.level.propagate("mousemove", [e.clientX, e.clientY]);
-	})
-
-	window.addEventListener('onmouseup', function(e){
-		mouseIsDown = true;
-		global.engine.level.propagate("mouseup", [e.clientX, e.clientY]);
-	});
-
 	// Click on Start Button on Main Menu
 	document.getElementById("startButton").onclick = function() {
 		// Create a new engine with the level MainLevel and set to global so it can be accesed by nodejs
@@ -58,6 +28,7 @@ window.onload = function(){
 		// Disappear main menu div by setting display to none
 		document.getElementById("main-menu").className += " hidden";
 		document.getElementById('control-panel').className = " ";
+		mainAudio.pause();
 	}
 
 	// Click on Start Button on Main Menu
@@ -69,6 +40,7 @@ window.onload = function(){
 		// Disappear credits div by setting display to none
 		document.getElementById("credits").className += " hidden";
 		document.getElementById('control-panel').className = " ";
+		mainAudio.pause();
 	}
 
 	// Click on Credits Button on Main Menu
@@ -88,10 +60,27 @@ window.onload = function(){
 		// Disappear credits div by setting display to none
 		document.getElementById("credits").style.display = 'none';
 	}
-
+	var toggleEditor = false;
 	//Shows code editor
 	document.getElementById("editor").onclick = function(){
-		document.getElementById('contain-editor').className = "container";
-		console.log("Change");
+		if(toggleEditor){
+			document.getElementById('contain-editor').className = "container hidden";
+			toggleEditor = false;
+		}
+		else{
+			document.getElementById('contain-editor').className = "container";
+			toggleEditor = true;
+		}
 	}
+	//Attacks
+	document.getElementById("attack-sword").onclick = function(){
+		global.engine.level.propagate("keyup", [32]);
+	}
+
+	//Add audio to main menu
+	var mainAudio = document.createElement("audio");
+	mainAudio.src = "resources/menuSong.ogg";
+	mainAudio.loop = true;
+	mainAudio.play();
+
 }

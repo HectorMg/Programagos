@@ -1,0 +1,20 @@
+{
+  "players":[
+    {
+      "name": "Hector",
+      "highscore": 0,
+      "spells":{
+        "simple": "simple.js",
+        "complicated": "complicated.js"
+      }
+    },
+    {
+      "name": "Jorge",
+      "highscore": 0,
+      "spells":{
+        "simple": "simple.js",
+        "complicated": "complicated.js"
+      }
+    }
+  ]
+}
