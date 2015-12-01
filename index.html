@@ -24,12 +24,39 @@
 <body>
 
 	<div id="control-panel" class="hidden">
-		<div class="progress" id="timer">
-		  <div class="progress-bar progress-bar-warning" style="width: 100%">
-		    <span class="sr-only">60% Complete (warning)</span>
-		  </div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10">
+					<div class="row">
+						<div class="col-sm-1">
+							<span class="glyphicon glyphicon-time ui-glyph"></span>
+						</div>
+						<div class="col-sm-11 time-bar">
+							<div class="progress" id="timer">
+							  <div class="progress-bar progress-bar-warning time-bar" style="width: 100%;">
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<div class="row">
+						<div class="col-sm-1">
+								<img src="resources/spellbook.png" class="ui-icon">
+						</div>
+						<div class="col-sm-1">
+							<img src="resources/new_spell.png" class="ui-icon">
+						</div>
+						<div class="col-sm-1">
+							<span class = "glyphicon glyphicon-music ui-glyph"></span>
+						</div>
+						<div class="col-sm-1">
+							<span class="glyphicon glyphicon-remove ui-glyph"></span>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<span class = "glyphicon glyphicon-music ui-glyph"></span>
 	</div>
 
 	<div id="main-menu">
