@@ -1,6 +1,8 @@
 //main.js
 //Here's the starting point of everything.
 
+var PlayerScriptRunner = require("PlayerScriptRunner");
+
 //When the window loads, start everything.
 window.onload = function(){
 
@@ -80,6 +82,13 @@ window.onload = function(){
 	document.getElementById("attack-sword").onmouseup = function(){
 		global.engine.level.propagate("keyup", [32]);
 	}
+
+	//Send code
+	document.getElementById("send-code").onclick = function(){
+		var playerScriptRunner = PlayerScriptRunner(document.getElementById("terminal"));
+		playerScriptRunner.runScript(document.getElementById("console").value);
+	}
+
 
 	//Add audio to main menu
 	var mainAudio = document.createElement("audio");

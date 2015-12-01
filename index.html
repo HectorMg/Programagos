@@ -17,10 +17,6 @@
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono|Play|Dancing+Script|Pacifico|Hammersmith+One" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Play|Lora|Poiret+One|ABeeZee|Coming+Soon|Courgette|Cinzel|Playball|Permanent+Marker" rel="stylesheet" type="text/css">
 
-		<!-- Calls highlight.js -->
-		<link rel="stylesheet" href="libraries/highlight/styles/default.css">
-		<script src="libraries/highlight/highlight.pack.js"></script>
-		<script>hljs.initHighlightingOnLoad();</script>
 
 		<link href='https://fonts.googleapis.com/css?family=Fira+Mono' rel='stylesheet' type='text/css'>
 
@@ -124,19 +120,19 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<h7>Text Editor</h7>
-					<pre><code class = "javascript" contenteditable="true" oninput="hljs.highlightBlock(document.getElementById('console'))" id="console"></code></pre>
+					<textarea class = "fill-div" id="console" name="code-content"></textarea>
 				</div>
 				<div class="col-sm-6">
 					<h7>Terminal</h7>
 					<textarea class = "fill-div" id="terminal"></textarea>
 				</div>
 			</div>
-			
+
 			<div class="row">
 				<div class="col-sm-10">
 				</div>
 
-				<button type="button" class="btn btn-default" class="col-sm-1">
+				<button type="button" class="btn btn-default" class="col-sm-1" id = "send-code">
 					<span class="glyphicon glyphicon-play"></span>
 				</button>
 
