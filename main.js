@@ -107,8 +107,10 @@ window.onload = function(){
 		global.engine.level.propagate("keyup", [32]);
 	}
 
+	//Add audio to main menu
 	var mainAudio = document.createElement("audio");
 	mainAudio.src = "resources/menuSong.ogg";
 	mainAudio.loop = true;
 	mainAudio.play();
+
 }
