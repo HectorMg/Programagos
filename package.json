@@ -9,7 +9,8 @@
 		"frame":true,
 		"width":800,
 		"height":500,
-		"position": "center"
+		"position": "center",
+		"resizeable": false
 	},
 	"node":true,
 	"single-instance":false
