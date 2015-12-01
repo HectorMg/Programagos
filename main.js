@@ -31,6 +31,24 @@ window.onload = function(){
 		global.engine.level.propagate("keypress", [e.keyCode]);
 	});
 
+	var mouseIsDown = false;
+	window.addEventListener('onmousedown', function(e){
+		mouseIsDown = true;
+		global.engine.level.propagate("mousedown", [e.clientX, e.clientY]);
+	});
+
+	window.addEventListener('onmousemove', function(e){
+		if(mouseIsDown){
+			global.engine.level.propagate("mousedrag", [e.clientX, e.clientY]);
+		}
+		global.engine.level.propagate("mousemove", [e.clientX, e.clientY]);
+	})
+
+	window.addEventListener('onmouseup', function(e){
+		mouseIsDown = true;
+		global.engine.level.propagate("mouseup", [e.clientX, e.clientY]);
+	});
+
 	// Click on Start Button on Main Menu
 	document.getElementById("startButton").onclick = function() {
 		// Create a new engine with the level MainLevel and set to global so it can be accesed by nodejs
@@ -71,4 +89,9 @@ window.onload = function(){
 		document.getElementById("credits").style.display = 'none';
 	}
 
+	//Shows code editor
+	document.getElementById("editor").onclick = function(){
+		document.getElementById('contain-editor').className = "container";
+		console.log("Change");
+	}
 }
