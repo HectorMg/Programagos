@@ -9,6 +9,16 @@ body {
 	overflow-x: hidden;
 }
 
+#control-panel{
+	background-color: rgba(255, 0, 0, 0.1);
+	width: 100%;
+	height: 60px;
+}
+
+.hidden{
+	display: none;
+}
+
 #main-menu, #credits {
 	text-align: center;
 	margin: 0 auto;
@@ -20,13 +30,13 @@ body {
 	display:  none;
 }
 
-h1 {
+.header-1 {
 	margin: -50px 0 50px 0;
 	font-size: 100px;
 	height: 175px;
 }
 
-h3 {
+.header-2 {
 	font-family: 'Play', sans-serif;
 	margin-bottom: 50px;
 }
@@ -61,7 +71,7 @@ h3 {
 	color: #336699;
 }
 
-button {
+.button {
 	width: 210px;
 	height:75px;
 	margin-bottom: 20px;
@@ -73,7 +83,7 @@ button {
 	border: 0;
 }
 
-button:hover {
+.button:hover {
 	cursor: pointer;
 	background: #c0392b !important;
 	color: #2980b9 !important;
