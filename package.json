@@ -8,8 +8,9 @@
 		"toolbar":true,
 		"width":800,
 		"height":500,
+		"position": "center",
 		"frame":true,
-		"resizable":false,
+		"resizable": false,
 		"position": "center"
 	},
 	"node":true,
