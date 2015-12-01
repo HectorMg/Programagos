@@ -19,36 +19,6 @@ window.onload = function(){
 	//Create start level
 	var mainLevel = require('MainLevel');
 
-	window.addEventListener('keyup', function(e){
-		global.engine.level.propagate("keyup", [e.keyCode]);
-	});
-
-	window.addEventListener('keydown', function(e){
-		global.engine.level.propagate("keydown", [e.keyCode]);
-	});
-
-	window.addEventListener('keypress', function(e){
-		global.engine.level.propagate("keypress", [e.keyCode]);
-	});
-
-	var mouseIsDown = false;
-	window.addEventListener('onmousedown', function(e){
-		mouseIsDown = true;
-		global.engine.level.propagate("mousedown", [e.clientX, e.clientY]);
-	});
-
-	window.addEventListener('onmousemove', function(e){
-		if(mouseIsDown){
-			global.engine.level.propagate("mousedrag", [e.clientX, e.clientY]);
-		}
-		global.engine.level.propagate("mousemove", [e.clientX, e.clientY]);
-	})
-
-	window.addEventListener('onmouseup', function(e){
-		mouseIsDown = true;
-		global.engine.level.propagate("mouseup", [e.clientX, e.clientY]);
-	});
-
 	// Click on Start Button on Main Menu
 	document.getElementById("startButton").onclick = function() {
 		// Create a new engine with the level MainLevel and set to global so it can be accesed by nodejs
