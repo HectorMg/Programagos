@@ -1,140 +1,134 @@
 <!DOCTYPE html>
 
 <html land="en">
+	<head>
+		<title>Programagos</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-	<title>Programagos</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Calls the game files -->
+		<script src="main.js"></script>
 
-	<!-- Calls the game files -->
-	<script src="main.js"></script>
+		<!-- Calls local stylesheet -->
+		<link rel="stylesheet" href="resources/style.css" type="text/css">
+		<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css" type="text/css">
 
-	<!-- Calls local stylesheet -->
-	<link rel="stylesheet" href="resources/style.css" type="text/css">
-	<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css" type="text/css">
+		<!-- Calls title fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono|Play|Dancing+Script|Pacifico|Hammersmith+One" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Play|Lora|Poiret+One|ABeeZee|Coming+Soon|Courgette|Cinzel|Playball|Permanent+Marker" rel="stylesheet" type="text/css">
 
-	<!-- Calls title fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono|Play|Dancing+Script|Pacifico|Hammersmith+One" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Play|Lora|Poiret+One|ABeeZee|Coming+Soon|Courgette|Cinzel|Playball|Permanent+Marker" rel="stylesheet" type="text/css">
+		<!-- Calls highlight.js -->
+		<link rel="stylesheet" href="libraries/highlight/styles/default.css">
+		<script src="libraries/highlight/highlight.pack.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
 
-	<!-- Calls highlight.js -->
-	<link rel="stylesheet" href="libraries/highlight/styles/default.css">
-	<script src="libraries/highlight/highlight.pack.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
-
-	<link href='https://fonts.googleapis.com/css?family=Fira+Mono' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Fira+Mono' rel='stylesheet' type='text/css'>
 
 
-</head>
+	</head>
 
-<body>
+	<body>
 
-	<div id="control-panel" class="hidden">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-2">
-					<div class="row">
-						<div class="col-sm-1">
-								<img src="resources/attack.png" class="ui-icon" id="attack">
-						</div>
-						<div class="col-sm-1">
-								<img src="resources/spellbook.png" class="ui-icon">
-						</div>
-						<div class="col-sm-1">
-							<a href="" id="editor"><img src="resources/new_spell.png" class="ui-icon"></a>
+		<div id="control-panel" class="hidden">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="row">
+							<div class="col-sm-1">
+									<img src="resources/attack.png" class="ui-icon" id="attack">
+							</div>
+							<div class="col-sm-1">
+									<img src="resources/spellbook.png" class="ui-icon">
+							</div>
+							<div class="col-sm-1">
+								<img src="resources/new_spell.png" class="ui-icon" id="editor">
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-sm-9">
-					<div class="row">
-						<div class="col-sm-1">
-							<span class="glyphicon glyphicon-time ui-glyph"></span>
+					<div class="col-sm-9">
+						<div class="row">
+							<div class="col-sm-1">
+								<span class="glyphicon glyphicon-time ui-glyph"></span>
+							</div>
+							<div class="col-sm-11 time-bar">
+								<div class="progress" id="timer">
+								  <div class="progress-bar progress-bar-warning time-bar" style="width: 100%;">
+								  </div>
+								</div>
+							</div>
 						</div>
-						<div class="col-sm-11 time-bar">
-							<div class="progress" id="timer">
-							  <div class="progress-bar progress-bar-warning time-bar" style="width: 100%;">
-							  </div>
+					</div>
+					<div class="col-sm-1">
+						<div class="row">
+							<div class="col-sm-1">
+								<span class = "glyphicon glyphicon-music ui-glyph"></span>
+							</div>
+							<div class="col-sm-1">
+								<span class="glyphicon glyphicon-remove ui-glyph"></span>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-1">
-					<div class="row">
-						<div class="col-sm-1">
-							<span class = "glyphicon glyphicon-music ui-glyph"></span>
-						</div>
-						<div class="col-sm-1">
-							<span class="glyphicon glyphicon-remove ui-glyph"></span>
-						</div>
-					</div>
+			</div>
+		</div>
+
+		<div id="main-menu">
+
+			<h1 class="header-1"><span id="progra">Progra</span><span id="magos">magos</span></h1>
+
+			<h3 class="header-2"><span id="areyou">ARE YOU READY TO TAKE</span><span id="takethe"> THE CHALLENGE?</span></h3>
+
+			<button class="button" id="startButton">START</button><br>
+			<button class="button" id="creditsButton">CREDITS</button>
+
+			<p id="footer">
+				Copyright &copy; Testigos de Javascript
+			</p>
+
+		</div>
+
+		<div id="credits">
+
+			<p>
+				<strong>Alejandro Lozano</strong>: Graphics and UI<br>
+				<strong>Hector Morales</strong>: Game Engine and Game Programming<br>
+				<strong>Javier Gutierrez</strong>: Graphics<br>
+				<strong>Jorge Paredes</strong>: Game Engine and Game Programming<br>
+				<strong>Pablo de los Santos</strong>: Music and UI<br>
+			</p>
+
+			<button class="button" id="returnButton">RETURN</button><br>
+			<button class="button" id="startButtonCreds">START</button>
+
+			<p id="footer">
+				Copyright &copy; Testigos de Javascript
+			</p>
+
+		</div>
+
+		<div class="container hidden" id="contain-editor">
+			<div class="row">
+				<div class="col-sm-6">
+					<h7>Text Editor</h7>
+					<pre><code class = "javascript" contenteditable="true" oninput="hljs.highlightBlock(document.getElementById('console'))" id="console"></code></pre>
+				</div>
+				<div class="col-sm-6">
+					<h7>Terminal</h7>
+					<textarea class = "fill-div" id="terminal"></textarea>
 				</div>
 			</div>
-		</div>
-	</div>
+			<div class="row">
+				<div class="col-sm-10">
+				</div>
 
-	<div id="main-menu">
+				<button type="button" class="btn btn-default" class="col-sm-1">
+					<span class="glyphicon glyphicon-play"></span>
+				</button>
 
-		<h1 class="header-1"><span id="progra">Progra</span><span id="magos">magos</span></h1>
-
-		<h3 class="header-2"><span id="areyou">ARE YOU READY TO TAKE</span><span id="takethe"> THE CHALLENGE?</span></h3>
-
-		<button class="button" id="startButton">START</button><br>
-		<button class="button" id="creditsButton">CREDITS</button>
-
-		<p id="footer">
-			Copyright &copy; Testigos de Javascript
-		</p>
-
-	</div>
-
-	<div id="credits">
-
-		<p>
-			<strong>Alejandro Lozano</strong>: Graphics and UI<br>
-			<strong>Hector Morales</strong>: Game Engine and Game Programming<br>
-			<strong>Javier Gutierrez</strong>: Graphics<br>
-			<strong>Jorge Paredes</strong>: Game Engine and Game Programming<br>
-			<strong>Pablo de los Santos</strong>: Music and UI<br>
-		</p>
-
-		<button class="button" id="returnButton">RETURN</button><br>
-		<button class="button" id="startButtonCreds">START</button>
-
-		<p id="footer">
-			Copyright &copy; Testigos de Javascript
-		</p>
-
-	</div>
-
-	<div class="container hidden" id="contain-editor">
-		<div class="row">
-			<div class="col-sm-6">
-				<h7>Terminal</h7>
-				<textarea class = "fill-div" id="terminal"></textarea>
-			</div>
-			<div class="col-sm-6">
-				<h7>Text Editor</h7>
-
-				<textarea class = "fill-div" id="console"></textarea>
+				<button type="button" class="btn btn-default" class="col-sm-1">
+					<span class="glyphicon glyphicon-ok"></span>
+				</button>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-10">
-			</div>
-
-			<button type="button" class="btn btn-default" class="col-sm-1">
-				<span class="glyphicon glyphicon-play"></span>
-			</button>
-
-			<button type="button" class="btn btn-default" class="col-sm-1">
-				<span class="glyphicon glyphicon-ok"></span>
-			</button>
-		</div>
-
-
-	</div>
-
-</body>
-
+	</body>
 </html>

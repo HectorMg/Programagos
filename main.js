@@ -71,10 +71,27 @@ window.onload = function(){
 		// Disappear credits div by setting display to none
 		document.getElementById("credits").style.display = 'none';
 	}
-
+	var toggleEditor = false;
 	//Shows code editor
 	document.getElementById("editor").onclick = function(){
-		document.getElementById('contain-editor').className = "container";
-		console.log("Change");
+		if(toggleEditor){
+			document.getElementById('contain-editor').className = "container hidden";
+			toggleEditor = false;
+		}
+		else{
+			document.getElementById('contain-editor').className = "container";
+			toggleEditor = true;
+		}
+	}
+	//Attacks
+	document.getElementById("attack").onclick = function(){
+		if(toggleAttack){
+			document.getElementById('contain-editor').className = "container hidden";
+			toggleAttack = false;
+		}
+		else{
+			document.getElementById('contain-editor').className = "container";
+			toggleAttack = true;
+		}
 	}
 }
