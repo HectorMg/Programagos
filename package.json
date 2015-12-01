@@ -8,14 +8,10 @@
 		"toolbar":true,
 		"width":800,
 		"height":500,
-<<<<<<< HEAD
 		"position": "center",
-		"resizeable": false
-=======
 		"frame":true,
-		"resizable":false,
+		"resizable": false,
 		"position": "center"
->>>>>>> 7c7cd8c8bac9795c785ec25ac8a3284b5c180ebd
 	},
 	"node":true,
 	"single-instance":false
