@@ -12,6 +12,7 @@
 
 	<!-- Calls local stylesheet -->
 	<link rel="stylesheet" href="resources/style.css" type="text/css">
+	<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css" type="text/css">
 
 	<!-- Calls title fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono|Play|Dancing+Script|Pacifico|Hammersmith+One" rel="stylesheet" type="text/css">
@@ -22,14 +23,18 @@
 
 <body>
 
+	<div id="control-panel" class="hidden">
+		<span class = "glyphicon glyphicon-music"></span>
+	</div>
+
 	<div id="main-menu">
 
-		<h1><span id="progra">Progra</span><span id="magos">magos</span></h1>
+		<h1 class="header-1"><span id="progra">Progra</span><span id="magos">magos</span></h1>
 
-		<h3><span id="areyou">ARE YOU READY TO TAKE</span><span id="takethe"> THE CHALLENGE?</span></h3>
+		<h3 class="header-2"><span id="areyou">ARE YOU READY TO TAKE</span><span id="takethe"> THE CHALLENGE?</span></h3>
 
-		<button id="startButton">START</button><br>
-		<button id="creditsButton">CREDITS</button>
+		<button class="button" id="startButton">START</button><br>
+		<button class="button" id="creditsButton">CREDITS</button>
 
 		<p id="footer">
 			Copyright &copy; Testigos de Javascript
@@ -47,8 +52,8 @@
 			<strong>Pablo de los Santos</strong>: Music and UI<br>
 		</p>
 
-		<button id="returnButton">RETURN</button><br>
-		<button id="startButtonCreds">START</button>
+		<button class="button" id="returnButton">RETURN</button><br>
+		<button class="button" id="startButtonCreds">START</button>
 
 		<p id="footer">
 			Copyright &copy; Testigos de Javascript
