@@ -58,6 +58,7 @@ window.onload = function(){
 		// Disappear main menu div by setting display to none
 		document.getElementById("main-menu").className += " hidden";
 		document.getElementById('control-panel').className = " ";
+		mainAudio.pause();
 	}
 
 	// Click on Start Button on Main Menu
@@ -69,6 +70,7 @@ window.onload = function(){
 		// Disappear credits div by setting display to none
 		document.getElementById("credits").className += " hidden";
 		document.getElementById('control-panel').className = " ";
+		mainAudio.pause();
 	}
 
 	// Click on Credits Button on Main Menu
@@ -101,14 +103,12 @@ window.onload = function(){
 		}
 	}
 	//Attacks
-	document.getElementById("attack").onclick = function(){
-		if(toggleAttack){
-			document.getElementById('contain-editor').className = "container hidden";
-			toggleAttack = false;
-		}
-		else{
-			document.getElementById('contain-editor').className = "container";
-			toggleAttack = true;
-		}
+	document.getElementById("attack-sword").onclick = function(){
+		global.engine.level.propagate("keyup", [32]);
 	}
+
+	var mainAudio = document.createElement("audio");
+	mainAudio.src = "resources/menuSong.ogg";
+	mainAudio.loop = true;
+	mainAudio.play();
 }
