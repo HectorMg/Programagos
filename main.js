@@ -39,7 +39,7 @@ window.onload = function(){
 		global.engine.find("Pauser").pause();
 	}
 
-	// Click on Start Button on Main Menu
+	// Click on Start Button on Credits menu
 	document.getElementById("startButtonCreds").onclick = function() {
 		// Create a new engine with the level MainLevel and set to global so it can be accesed by nodejs
 		global.engine = new Engine(mainLevel("Hector", "Jorge"));
@@ -54,20 +54,59 @@ window.onload = function(){
 	// Click on Credits Button on Main Menu
 	document.getElementById("creditsButton").onclick = function() {
 		// Disappear main menu div by setting display to none
-		document.getElementById("main-menu").style.display = 'none';
-
-		// Apper credits div by setting display to block
-		document.getElementById("credits").style.display = 'block';
+		document.getElementById("main-menu").className += 'hidden';
+		// Apper credits div by taking off hidden class
+		document.getElementById("credits").className = ' ';
 	}
+
+	// Click on Highscores Button on Main Menu
+	document.getElementById("highscoreButton").onclick = function() {
+		document.getElementById("main-menu").className += " hidden";
+		document.getElementById('highscores').className = " ";
+
+		var dataIO = require('dataIO');
+
+		var data = dataIO.readFile();
+
+		data.players.sort(function(a, b) { return a.highscore < b.highscore ? 1 : -1; }).slice(0, 5);
+
+    var html = '<table class="table no-border"><thead><tr class="no-border"><th class="table-head no-border">Place</th><th class="table-head no-border">Player</th><th class="table-head no-border">Score</th></thead><tbody class="no-border">';
+
+		for (var i = 0; i < data.players.length; i++) {
+			html += '<tr class="no-border"><td class="table-cell no-border">';
+			html += i+1;
+			html += '</td><td class="table-cell no-border">';
+		  html += data.players[i].name;
+			html += '</td><td class="table-cell no-border">';
+		  html += data.players[i].highscore;
+		  html += '</td></tr>';
+		}
+		html += '</tbody></table>';
+
+		document.getElementById('highscores_list').innerHTML = html;
+
+}
 
 	// Click on Return Button on Credits Menu
 	document.getElementById("returnButton").onclick = function() {
-		// Apper main menu div by setting display to block
-		document.getElementById("main-menu").style.display = 'block';
-
+		// Shows main menu div by taking off hidden class
+		document.getElementById("main-menu").className = ' ';
 		// Disappear credits div by setting display to none
-		document.getElementById("credits").style.display = 'none';
+		document.getElementById("credits").className += ' hidden';
 	}
+
+	//Click on Return button on highscores menu
+	document.getElementById("returnButtonHighscores").onclick = function(){
+		//Shows main menu
+		document.getElementById("main-menu").className = ' ';
+		//Hides highscores menu
+		document.getElementById("highscores").className += ' hidden';
+	}
+
+
+
+
+	//Code editor
 	var toggleEditor = false;
 	//Shows code editor
 	document.getElementById("editor").onclick = function(){
@@ -94,7 +133,6 @@ window.onload = function(){
 		var playerScriptRunner = PlayerScriptRunner(document.getElementById("terminal"));
 		playerScriptRunner.runScript(document.getElementById("console").value);
 	}
-
 
 	//Add audio to main menu
 	var mainAudio = document.createElement("audio");

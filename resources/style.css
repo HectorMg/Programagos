@@ -62,16 +62,12 @@ body {
  width: 25px;
 }
 
-#main-menu, #credits {
+#main-menu, #credits, #highscores {
 	background: #fff url("background.jpg") no-repeat fixed left top;
 	text-align: center;
 	margin: 0 auto;
 	height: 600px;
 	width: 800px;
-}
-
-#credits {
-	display:  none;
 }
 
 .header-1 {
@@ -83,6 +79,31 @@ body {
 .header-2 {
 	font-family: 'Play', sans-serif;
 	margin-bottom: 50px;
+}
+
+.div-heading{
+	font-family: 'Permanent Marker', cursive;
+	color: #3498db;
+	margin-top: 0;
+	padding-top: 20px;
+	margin-bottom: 20px;
+}
+
+.table-head{
+	text-align: center;
+	font-size: 1.6em;
+	color: red;
+}
+
+.no-border{
+	border: none !important;
+}
+
+.table-cell{
+	text-align: center;
+	font-size: 1.4em;
+	color: black;
+	font-weight: bold;
 }
 
 #progra {
@@ -182,7 +203,7 @@ p {
 	display:table;
 	background-color:rgba(0,0,0,1);
 	-webkit-animation: splash 9s forwards;
-  animation: splash 9s forwards;
+  animation: splash 9 s forwards;
 }
 .overlay-inner {
 	display:table-cell;
