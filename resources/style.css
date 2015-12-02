@@ -203,7 +203,7 @@ p {
 	background-color: white;
 	border-radius: 5px;
 	width: 70%;
-	height: 60%;
+	height: 70%;
 	text-align: center;
 }
 
@@ -214,6 +214,12 @@ p {
 select{
 	min-width: 90px;
 	padding-left: 10px;
+}
+
+.limited-width{
+	width: 30% !important;
+	margin-left: 275px;
+	margin-top: 20px;
 }
 /* Splash screen */
 

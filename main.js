@@ -39,7 +39,7 @@ window.onload = function(){
 		//Gets player names from selectors
 		var playerone = document.getElementById("p1").value;
 		var playertwo = document.getElementById("p2").value;
-		
+
 		// Create a new engine with the level MainLevel and set to global so it can be accesed by nodejs
 		global.engine = new Engine(mainLevel(playerone, playertwo));
 		global.engine.start();
@@ -48,6 +48,39 @@ window.onload = function(){
 		document.getElementById("playerSelect").className += " hidden";
 		document.getElementById('control-panel').className = " ";
 		mainAudio.pause();
+	}
+
+	// Click on New Player on CharacterSelect Menu
+	document.getElementById("newPlayer").onclick = function() {
+		//Gets player name from input
+		var newPlayer = document.getElementById("newName").value;
+
+		var dataIO = require('dataIO');
+
+		var data = dataIO.readFile();
+
+		data.players[data.players.length] = {
+			"name": newPlayer,"highscore":0,"spells":{}
+		}
+
+		dataIO.writeFile(data);
+
+		var html = "";
+
+		var dataIO = require('dataIO');
+
+		var data = dataIO.readFile();
+
+		for (var i = 0; i < data.players.length; i++) {
+			html += '<option value="'+data.players[i].name+'">';
+			html += data.players[i].name;
+			html += '</option>';
+		}
+		html += '</tbody></table>';
+
+		document.getElementById('p1').innerHTML = html;
+		document.getElementById('p2').innerHTML = html;
+
 	}
 
 	// Click on Start Button on Credits menu
@@ -64,6 +97,12 @@ window.onload = function(){
 		document.getElementById("main-menu").className += 'hidden';
 		// Apper credits div by taking off hidden class
 		document.getElementById("credits").className = ' ';
+	}
+
+	//Click quit
+
+	document.getElementById("quitGame").onclick = function(){
+		window.location.reload();
 	}
 
 	// Click on Highscores Button on Main Menu
