@@ -33,6 +33,12 @@ window.onload = function(){
 		mainAudio.pause();
 	}
 
+	// Click on resume Button on pause Menu
+	document.getElementById("resumeButton").onclick = function() {
+		// Create a new engine with the level MainLevel and set to global so it can be accesed by nodejs
+		global.engine.find("Pauser").pause();
+	}
+
 	// Click on Start Button on Main Menu
 	document.getElementById("startButtonCreds").onclick = function() {
 		// Create a new engine with the level MainLevel and set to global so it can be accesed by nodejs

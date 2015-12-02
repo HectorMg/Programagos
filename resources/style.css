@@ -19,35 +19,26 @@ body {
 	padding-top: 10px;
 	padding-right: 10px;
 	padding-left: 10px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-	z-index: 100;
->>>>>>> 7c7cd8c8bac9795c785ec25ac8a3284b5c180ebd
-=======
 	z-index: 5;
->>>>>>> 11df755f6ae1bea500daa7f9fa6a4e4d78121446
 }
 
-#pause {
+.pauseDiv {
 	background-color: rgba(0, 0, 0, 0.5);
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 800px;
 	height: 500px;
-	z-index: 1000;
+	z-index: 5;
 	margin: 0;
 }
 
 #pause #container {
-	background-color: #e74c3c;
 	border-radius: 5px;
 	width: 400px;
 	height: 300px;
 	margin: 50px auto;
-	padding: 50px 105px 50px 105px; 
+	padding: 50px 105px 50px 105px;
 }
 
 #pause #container button {
