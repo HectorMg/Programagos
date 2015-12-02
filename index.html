@@ -84,7 +84,7 @@
 
 			<h3 class="header-2"><span id="areyou">ARE YOU READY TO TAKE</span><span id="takethe"> THE CHALLENGE?</span></h3>
 
-			<div class="row button-row"><button class="btn btn-primary" id="startButton">Start</button><br></div>
+			<div class="row button-row"><button class="btn btn-primary" id="startButton">New Game</button><br></div>
 			<div class="row button-row"><button class="btn btn-primary" id="creditsButton">Credits</button></div>
 			<div class="row button-row"><button class="btn btn-primary" id="highscoreButton">Highscores</button></div>
 
@@ -95,12 +95,67 @@
 		</div>
 
 
-		<div id="pause" class="pauseDiv hidden">
+		<div id="pause" class="popDiv hidden">
 			<div id="container">
 				<div class="row button-row"><button class="btn btn-success" id="resumeButton">Resume</button><br></div>
 				<div class="row button-row"><button class="btn btn-warning" id="quitButton">Quit</button></div>
 			</div>
 		</div>
+
+		<!-- Player Select -->
+		<div id="playerSelect" class="popDiv hidden">
+			<div class="container choosePlayer">
+				<div class="row playersel-row">
+					<div class="col-sm-6">
+						<div class="row playersel-row">
+							<h1 class="player-select-title" id="player1">Player 1</h1>
+						</div>
+						<div class="row playersel-row">
+							<select name="playerone" id="p1">
+							</select>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="row playersel-row">
+							<h1 class="player-select-title" id="player2">Player 2</h1>
+						</div>
+						<div class="row playersel-row">
+							<select name="playertwo" id="p2">
+								<script>
+
+								var html = "";
+
+								var dataIO = require('dataIO');
+
+								var data = dataIO.readFile();
+
+								for (var i = 0; i < data.players.length; i++) {
+									html += '<option value="'+data.players[i].name+'">';
+								  html += data.players[i].name;
+								  html += '</option>';
+								}
+								html += '</tbody></table>';
+
+								document.getElementById('p1').innerHTML = html;
+								document.getElementById('p2').innerHTML = html;
+								</script>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row button-row playersel-row">
+					<div class ="row button-row">
+						<button class="btn btn-success" id="newPlayer">New Player</button>
+						<br>
+					</div>
+					<div class="row button-row">
+						<button class="btn btn-primary" id="startGameButton">Start Game</button>
+						<br>
+					</div>
+				</div>
+			</div>
+		</div>
+
 
 		<div id="credits" class="hidden">
 			<h1 class="div-heading">Credits</h1>
@@ -115,7 +170,7 @@
 				<button class="btn btn-primary" id="returnButton">Return</button><br>
 			</div>
 			<div class="row button-row">
-				<button class="button btn btn-primary" id="startButtonCreds">Start</button>
+				<button class="button btn btn-primary" id="startButtonCreds">New Game</button>
 			</div>
 
 

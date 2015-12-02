@@ -23,14 +23,9 @@ window.onload = function(){
 
 	// Click on Start Button on Main Menu
 	document.getElementById("startButton").onclick = function() {
-		// Create a new engine with the level MainLevel and set to global so it can be accesed by nodejs
-		global.engine = new Engine(mainLevel("Hector", "Jorge"));
-		global.engine.start();
-
 		// Disappear main menu div by setting display to none
 		document.getElementById("main-menu").className += " hidden";
-		document.getElementById('control-panel').className = " ";
-		mainAudio.pause();
+		document.getElementById('playerSelect').className = "popDiv";
 	}
 
 	// Click on resume Button on pause Menu
@@ -39,15 +34,27 @@ window.onload = function(){
 		global.engine.find("Pauser").pause();
 	}
 
-	// Click on Start Button on Credits menu
-	document.getElementById("startButtonCreds").onclick = function() {
+	// Click on Start Button on CharacterSelect Menu
+	document.getElementById("startGameButton").onclick = function() {
+		//Gets player names from selectors
+		var playerone = document.getElementById("p1").value;
+		var playertwo = document.getElementById("p2").value;
+		
 		// Create a new engine with the level MainLevel and set to global so it can be accesed by nodejs
-		global.engine = new Engine(mainLevel("Hector", "Jorge"));
+		global.engine = new Engine(mainLevel(playerone, playertwo));
 		global.engine.start();
 
+		// Disappear main menu div by setting display to none
+		document.getElementById("playerSelect").className += " hidden";
+		document.getElementById('control-panel').className = " ";
+		mainAudio.pause();
+	}
+
+	// Click on Start Button on Credits menu
+	document.getElementById("startButtonCreds").onclick = function() {
 		// Disappear credits div by setting display to none
 		document.getElementById("credits").className += " hidden";
-		document.getElementById('control-panel').className = " ";
+		document.getElementById('playerSelect').className = "popDiv";
 		mainAudio.pause();
 	}
 

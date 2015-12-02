@@ -22,8 +22,8 @@ body {
 	z-index: 5;
 }
 
-.pauseDiv {
-	background-color: rgba(0, 0, 0, 0.5);
+.popDiv {
+	background-color: rgba(0, 0, 0, 0.8);
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -147,11 +147,7 @@ button {
 	margin-bottom: 10px;
 }
 
-/*.button:hover {
-	cursor: pointer;
-	background: #c0392b !important;
-	color: #2980b9 !important;
-}*/
+
 
 p {
 	font-size: 20px;
@@ -168,7 +164,6 @@ p {
 }
 
 #contain-editor {
-	/*background: #336699;*/
 	padding: 10px;
 }
 
@@ -190,6 +185,36 @@ p {
 	font-family: 'ABeeZee', sans-serif;
 }
 
+/* Player select */
+.player-select-title{
+	font-family: 'Pacifico';
+	text-align:center;
+}
+
+#player1{
+	color: red;
+}
+#player2{
+	color:blue;
+}
+
+.choosePlayer{
+	margin-top: 100px;
+	background-color: white;
+	border-radius: 5px;
+	width: 70%;
+	height: 60%;
+	text-align: center;
+}
+
+.playersel-row{
+	margin-top: 20px;
+}
+
+select{
+	min-width: 90px;
+	padding-left: 10px;
+}
 /* Splash screen */
 
 .overlay {
