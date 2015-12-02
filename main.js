@@ -24,7 +24,7 @@ window.onload = function(){
 	// Click on Start Button on Main Menu
 	document.getElementById("startButton").onclick = function() {
 		// Create a new engine with the level MainLevel and set to global so it can be accesed by nodejs
-		global.engine = new Engine(mainLevel());
+		global.engine = new Engine(mainLevel("Hector", "Jorge"));
 		global.engine.start();
 
 		// Disappear main menu div by setting display to none
@@ -36,7 +36,7 @@ window.onload = function(){
 	// Click on Start Button on Main Menu
 	document.getElementById("startButtonCreds").onclick = function() {
 		// Create a new engine with the level MainLevel and set to global so it can be accesed by nodejs
-		global.engine = new Engine(mainLevel());
+		global.engine = new Engine(mainLevel("Hector", "Jorge"));
 		global.engine.start();
 
 		// Disappear credits div by setting display to none
