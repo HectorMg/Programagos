@@ -148,12 +148,9 @@ window.onload = function(){
 		//Hides highscores menu
 		document.getElementById("highscores").className += ' hidden';
 	}
-
-
-
-
 	//Code editor
 	var toggleEditor = false;
+
 	//Shows code editor
 	document.getElementById("editor").onclick = function(){
 		if(toggleEditor){
@@ -165,6 +162,50 @@ window.onload = function(){
 			toggleEditor = true;
 		}
 	}
+
+	//Spell Book
+	document.getElementById("spellbook").onclick = function(){
+
+		var tm = global.engine.find("turnManager");
+
+		var player = tm.players[tm.activePlayer];
+
+		var dataIO = require("dataIO");
+
+		var data = dataIO.readFile();
+
+		var playerIndex;
+		for(var i = 0; i < data.players.length; i++){
+			if(player.name == data.players[i].name){
+				playerIndex = i;
+			}
+		}
+		// Clear List
+		document.getElementById("drop-spells").innerHTML = '';
+
+		// Fill list
+		for (var i in data.players[playerIndex].spells) {
+			var li = document.createElement("li");
+			var a = document.createElement("a");
+			a.innerHTML = i;
+
+			a.onclick = (function(val){
+				return function(){
+					// player.castSpell(data.players[playerIndex].spells[j]);
+					console.log(val);
+				};
+			})(i);
+
+			li.appendChild(a);
+			document.getElementById('drop-spells').appendChild(li);
+		}
+
+
+		// document.getElementById('drop-spells').className = "container";
+	}
+
+	//CUANDO SALGA DEL SPELL BOOK DESAPARECERLO (CANCEL O SELECT)
+
 	//Attacks
 	document.getElementById("attack-sword").onmousedown = function(){
 		global.engine.level.propagate("keydown", [32]);

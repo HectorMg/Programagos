@@ -26,7 +26,7 @@
 	</head>
 
 	<body>
-
+<!-- Splashscreen -->
 		<div class="overlay">
 			<div class="overlay-inner">
 				<img src="resources/logo.png" style="width:400; height:250px;" >
@@ -37,16 +37,20 @@
 			</div>
 		</div>
 
+<!-- In game control panel -->
 		<div id="control-panel" class="hidden">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="row">
 							<div class="col-sm-1">
-									<img src="resources/attack.png" class="ui-icon" id="attack-sword">
+								<img src="resources/attack.png" class="ui-icon" id="attack-sword">
 							</div>
 							<div class="col-sm-1">
-									<img src="resources/spellbook.png" class="ui-icon">
+									<img src="resources/spellbook.png" class="ui-icon dropdown-toggle" data-toggle="dropdown" id="spellbook">
+									<ul class="dropdown-menu scrollable-menu" role="menu" id="drop-spells">
+
+                	</ul>
 							</div>
 							<div class="col-sm-1">
 								<img src="resources/new_spell.png" class="ui-icon" id="editor">
@@ -80,6 +84,7 @@
 			</div>
 		</div>
 
+<!-- Main Menu -->
 		<div id="main-menu">
 
 			<h1 class="header-1"><span id="progra">Progra</span><span id="magos">magos</span></h1>
@@ -96,7 +101,7 @@
 
 		</div>
 
-
+<!-- Pause Menu -->
 		<div id="pause" class="popDiv hidden">
 			<div id="container">
 				<div class="row button-row"><button class="btn btn-success" id="resumeButton">Resume</button><br></div>
@@ -104,7 +109,7 @@
 			</div>
 		</div>
 
-		<!-- Player Select -->
+<!-- Player Select UI-->
 		<div id="playerSelect" class="popDiv hidden">
 			<div class="container choosePlayer">
 				<div class="row playersel-row">
@@ -168,8 +173,7 @@
 			</div>
 		</div>
 
-		<!-- Winner announcement -->
-
+<!-- Winner announcement -->
 		<div id="winnerAnnouncement" class="popDiv hidden">
 			<div class="container choosePlayer">
 				<div class="row playersel-row">
@@ -184,7 +188,7 @@
 			</div>
 		</div>
 
-
+<!-- Credits Menu -->
 		<div id="credits" class="hidden">
 			<h1 class="div-heading">Credits</h1>
 			<p>
@@ -208,7 +212,8 @@
 
 		</div>
 
-		<div class="hidden" id="highscores">
+<!-- Highscores Menu -->
+		<div id="highscores" class="hidden">
 			<h1 class="div-heading">Highscores</h1>
 			<div class="container">
 				<div id="highscores_list"></div>
@@ -221,14 +226,15 @@
 			</p>
 		</div>
 
-		<div class="container hidden" id="contain-editor">
+<!-- Spell Text Editor -->
+		<div id="contain-editor" class="container hidden">
 			<div class="row">
 				<div class="col-sm-6">
 					<h7>Text Editor</h7>
 					<textarea class = "fill-div" id="console" name="code-content"></textarea>
 				</div>
 				<div class="col-sm-6">
-					<h7>Terminal</h7>
+					<h7>Console</h7>
 					<textarea class = "fill-div" id="terminal"></textarea>
 				</div>
 			</div>
@@ -242,7 +248,7 @@
 				</button>
 
 				<button type="button" class="btn btn-default" class="col-sm-1">
-					<span class="glyphicon glyphicon-ok"></span>
+					<span class="glyphicon glyphicon-floppy-disk"></span>
 				</button>
 			</div>
 		</div>
