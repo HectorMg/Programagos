@@ -1,1 +1,1 @@
-{"players":[{"name":"Hector","highscore":150,"spells":{"simple":"simple.js","complicated":"complicated.js"}},{"name":"Jorge","highscore":110,"spells":{"simple":"simple.js","complicated":"complicated.js"}}]}
+{"players":[{"name":"Hector","highscore":150,"spells":{"simple":"simple.js","complicated":"complicated.js", "probar":"probar.js"}},{"name":"Jorge","highscore":150,"spells":{"simple":"simple.js","complicated":"complicated.js"}},{"name":"Lopez","highscore":0,"spells":{}},{"name":"Diego","highscore":40,"spells":{}}]}

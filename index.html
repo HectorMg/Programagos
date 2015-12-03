@@ -7,6 +7,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- Calls the game files -->
+		<script src="resources/bootstrap/js/jquery.min.js"></script>
+		<script src="resources/bootstrap/js/bootstrap.js"></script>
 		<script src="main.js"></script>
 
 		<!-- Calls local stylesheet -->
@@ -24,17 +26,31 @@
 	</head>
 
 	<body>
+<!-- Splashscreen -->
+		<div class="overlay">
+			<div class="overlay-inner">
+				<img src="resources/logo.png" style="width:400; height:250px;" >
+				<p style="color:#fff; font-size: 1.3em;">
+					"Any sufficiently advanced technology is indistinguishable from magic (Arthur C. Clarke)... Any engineer of a sufficiently
+					advanced technology is indistinguishable from a wizard."
+				</p>
+			</div>
+		</div>
 
+<!-- In game control panel -->
 		<div id="control-panel" class="hidden">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="row">
 							<div class="col-sm-1">
-									<img src="resources/attack.png" class="ui-icon" id="attack-sword">
+								<img src="resources/attack.png" class="ui-icon" id="attack-sword">
 							</div>
 							<div class="col-sm-1">
-									<img src="resources/spellbook.png" class="ui-icon">
+									<img src="resources/spellbook.png" class="ui-icon dropdown-toggle" data-toggle="dropdown" id="spellbook">
+									<ul class="dropdown-menu scrollable-menu" role="menu" id="drop-spells">
+
+                	</ul>
 							</div>
 							<div class="col-sm-1">
 								<img src="resources/new_spell.png" class="ui-icon" id="editor">
@@ -68,13 +84,14 @@
 			</div>
 		</div>
 
+<!-- Main Menu -->
 		<div id="main-menu">
 
 			<h1 class="header-1"><span id="progra">Progra</span><span id="magos">magos</span></h1>
 
 			<h3 class="header-2"><span id="areyou">ARE YOU READY TO TAKE</span><span id="takethe"> THE CHALLENGE?</span></h3>
 
-			<div class="row button-row"><button class="btn btn-primary" id="startButton">Start</button><br></div>
+			<div class="row button-row"><button class="btn btn-primary" id="startButton">New Game</button><br></div>
 			<div class="row button-row"><button class="btn btn-primary" id="creditsButton">Credits</button></div>
 			<div class="row button-row"><button class="btn btn-primary" id="highscoreButton">Highscores</button></div>
 
@@ -84,16 +101,96 @@
 
 		</div>
 
-
-		<div id="pause" class="pauseDiv hidden">
+<!-- Pause Menu -->
+		<div id="pause" class="popDiv hidden">
 			<div id="container">
 				<div class="row button-row"><button class="btn btn-success" id="resumeButton">Resume</button><br></div>
 				<div class="row button-row"><button class="btn btn-warning" id="quitButton">Quit</button></div>
 			</div>
 		</div>
 
-		<div id="credits">
+<!-- Player Select UI-->
+		<div id="playerSelect" class="popDiv hidden">
+			<div class="container choosePlayer">
+				<div class="row playersel-row">
+					<div class="col-sm-6">
+						<div class="one-third">
+							<div class="row playersel-row">
+								<h1 class="player-select-title" id="player1">Player 1</h1>
+							</div>
+							<div class="row playersel-row">
+								<select class="form-control" name="playerone" id="p1">
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="one-third">
+							<div class="row playersel-row">
+								<h1 class="player-select-title" id="player2">Player 2</h1>
+							</div>
+							<div class="row playersel-row">
+								<select class="form-control" name="playertwo" id="p2">
+									<script>
 
+									var html = "";
+
+									var dataIO = require('dataIO');
+
+									var data = dataIO.readFile();
+
+									for (var i = 0; i < data.players.length; i++) {
+										html += '<option value="'+data.players[i].name+'">';
+										html += data.players[i].name;
+										html += '</option>';
+									}
+									html += '</tbody></table>';
+
+									document.getElementById('p1').innerHTML = html;
+									document.getElementById('p2').innerHTML = html;
+									</script>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row button-row playersel-row">
+					<div class ="row button-row">
+						<div class="col-sm-offset-3 col-sm-6">
+					    <div class="input-group">
+					      <span class="input-group-btn">
+					        <div class="btn btn-success" type="button" id="newPlayer">Add New Player</div>
+					      </span>
+					      <input type="text" class="form-control" placeholder="Enter your name..." id="newName">
+					    </div>
+					  </div>
+					</div>
+					<div class="row button-row">
+						<button class="btn btn-primary" id="startGameButton">Start Game</button>
+						<br>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!-- Winner announcement -->
+		<div id="winnerAnnouncement" class="popDiv hidden">
+			<div class="container choosePlayer">
+				<div class="row playersel-row">
+					<h1 id="winner-head"></h1>
+				</div>
+				<div class="row playersel-row">
+					<div class="row button-row">
+						<button class="btn btn-warning" id="quitGame">Quit</button>
+						<br>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!-- Credits Menu -->
+		<div id="credits" class="hidden">
+			<h1 class="div-heading">Credits</h1>
 			<p>
 				<strong>Alejandro Lozano</strong>: Graphics and UI<br>
 				<strong>Hector Morales</strong>: Game Engine and Game Programming<br>
@@ -101,12 +198,11 @@
 				<strong>Jorge Paredes</strong>: Game Engine and Game Programming<br>
 				<strong>Pablo de los Santos</strong>: Music and UI<br>
 			</p>
-
 			<div class="row button-row">
 				<button class="btn btn-primary" id="returnButton">Return</button><br>
 			</div>
 			<div class="row button-row">
-				<button class="button btn btn-primary" id="startButtonCreds">Start</button>
+				<button class="button btn btn-primary" id="startButtonCreds">New Game</button>
 			</div>
 
 
@@ -116,14 +212,29 @@
 
 		</div>
 
-		<div class="container hidden" id="contain-editor">
+<!-- Highscores Menu -->
+		<div id="highscores" class="hidden">
+			<h1 class="div-heading">Highscores</h1>
+			<div class="container">
+				<div id="highscores_list"></div>
+			</div>
+			<div class="row button-row">
+				<button class="btn btn-primary" id="returnButtonHighscores">Return</button><br>
+			</div>
+			<p class="footer">
+				&copy;2015 Testigos de Javascript. All Rights Reserved.
+			</p>
+		</div>
+
+<!-- Spell Text Editor -->
+		<div id="contain-editor" class="container hidden">
 			<div class="row">
 				<div class="col-sm-6">
 					<h7>Text Editor</h7>
 					<textarea class = "fill-div" id="console" name="code-content"></textarea>
 				</div>
 				<div class="col-sm-6">
-					<h7>Terminal</h7>
+					<h7>Console</h7>
 					<textarea class = "fill-div" id="terminal"></textarea>
 				</div>
 			</div>
@@ -137,7 +248,7 @@
 				</button>
 
 				<button type="button" class="btn btn-default" class="col-sm-1">
-					<span class="glyphicon glyphicon-ok"></span>
+					<span class="glyphicon glyphicon-floppy-disk"></span>
 				</button>
 			</div>
 		</div>
