@@ -7,6 +7,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- Calls the game files -->
+		<script src="resources/bootstrap/js/jquery.min.js"></script>
+		<script src="resources/bootstrap/js/bootstrap.js"></script>
 		<script src="main.js"></script>
 
 		<!-- Calls local stylesheet -->
@@ -107,47 +109,56 @@
 			<div class="container choosePlayer">
 				<div class="row playersel-row">
 					<div class="col-sm-6">
-						<div class="row playersel-row">
-							<h1 class="player-select-title" id="player1">Player 1</h1>
-						</div>
-						<div class="row playersel-row">
-							<select name="playerone" id="p1">
-							</select>
+						<div class="one-third">
+							<div class="row playersel-row">
+								<h1 class="player-select-title" id="player1">Player 1</h1>
+							</div>
+							<div class="row playersel-row">
+								<select class="form-control" name="playerone" id="p1">
+								</select>
+							</div>
 						</div>
 					</div>
 					<div class="col-sm-6">
-						<div class="row playersel-row">
-							<h1 class="player-select-title" id="player2">Player 2</h1>
-						</div>
-						<div class="row playersel-row">
-							<select name="playertwo" id="p2">
-								<script>
+						<div class="one-third">
+							<div class="row playersel-row">
+								<h1 class="player-select-title" id="player2">Player 2</h1>
+							</div>
+							<div class="row playersel-row">
+								<select class="form-control" name="playertwo" id="p2">
+									<script>
 
-								var html = "";
+									var html = "";
 
-								var dataIO = require('dataIO');
+									var dataIO = require('dataIO');
 
-								var data = dataIO.readFile();
+									var data = dataIO.readFile();
 
-								for (var i = 0; i < data.players.length; i++) {
-									html += '<option value="'+data.players[i].name+'">';
-								  html += data.players[i].name;
-								  html += '</option>';
-								}
-								html += '</tbody></table>';
+									for (var i = 0; i < data.players.length; i++) {
+										html += '<option value="'+data.players[i].name+'">';
+										html += data.players[i].name;
+										html += '</option>';
+									}
+									html += '</tbody></table>';
 
-								document.getElementById('p1').innerHTML = html;
-								document.getElementById('p2').innerHTML = html;
-								</script>
-							</select>
+									document.getElementById('p1').innerHTML = html;
+									document.getElementById('p2').innerHTML = html;
+									</script>
+								</select>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="row button-row playersel-row">
 					<div class ="row button-row">
-						<button class="btn btn-success" id="newPlayer">New Player</button>
-						<br>
-						<input type="text" placeholder="Enter your name" class="form-control limited-width" id="newName"></input>
+						<div class="col-sm-offset-3 col-sm-6">
+					    <div class="input-group">
+					      <span class="input-group-btn">
+					        <div class="btn btn-success" type="button" id="newPlayer">Add New Player</div>
+					      </span>
+					      <input type="text" class="form-control" placeholder="Enter your name..." id="newName">
+					    </div>
+					  </div>
 					</div>
 					<div class="row button-row">
 						<button class="btn btn-primary" id="startGameButton">Start Game</button>

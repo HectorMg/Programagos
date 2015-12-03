@@ -143,10 +143,18 @@ button {
 	border-radius: 10px;
 }
 
-.button-row{
-	margin-bottom: 10px;
+.new-player-container{
+	margin-left: 130px;
 }
 
+.button-row{
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.one-third{
+	padding: 20px;
+}
 
 
 p {
