@@ -1,8 +1,6 @@
 //main.js
 //Here's the starting point of everything.
 
-var PlayerScriptRunner = require("PlayerScriptRunner");
-
 //When the window loads, start everything.
 window.onload = function(){
 
@@ -91,8 +89,9 @@ window.onload = function(){
 
 	//Send code
 	document.getElementById("send-code").onclick = function(){
-		var playerScriptRunner = PlayerScriptRunner(document.getElementById("terminal"));
-		playerScriptRunner.runScript(document.getElementById("console").value);
+		var tm  = global.engine.find("turnManager");
+		var player = tm.players[tm.activePlayer];
+		player.castSpellScript(document.getElementById("console").value);
 	}
 
 
