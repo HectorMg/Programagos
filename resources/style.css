@@ -49,6 +49,9 @@ body {
 #pause #container button {
 	color: #fff;
 }
+.name-tag{
+	font-size: 1.3em;
+}
 
 .hidden{
 	display: none;

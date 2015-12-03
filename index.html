@@ -76,7 +76,7 @@
 								<span class = "glyphicon glyphicon-music ui-glyph"></span>
 							</div>
 							<div class="col-sm-1">
-								<span class="glyphicon glyphicon-remove ui-glyph"></span>
+								<span class="glyphicon glyphicon-pause ui-glyph"></span>
 							</div>
 						</div>
 					</div>
@@ -179,6 +179,9 @@
 				<div class="row playersel-row">
 					<h1 id="winner-head"></h1>
 				</div>
+				<div class="row">
+					<h2 id="final-score"></h2>
+				</div>
 				<div class="row playersel-row">
 					<div class="row button-row">
 						<button class="btn btn-warning" id="quitGame">Quit</button>
@@ -229,9 +232,19 @@
 <!-- Spell Text Editor -->
 		<div id="contain-editor" class="container hidden">
 			<div class="row">
+				<div class="col-sm-5">
+					<div class="row">
+						<h3 class="spell-name-label">Create new spell:</h3>
+					</div>
+					<div class="row">
+						<input type="text" class = "form-control" id="spell-name" placeholder = "New Spell Name"></input>
+					</div>
+				</div>
+			</div>
+			<div class="row">
 				<div class="col-sm-6">
 					<h7>Text Editor</h7>
-					<textarea class = "fill-div" id="console" name="code-content"></textarea>
+					<input type="textarea" class = "fill-div" id="console" name="code-content"></textarea>
 				</div>
 				<div class="col-sm-6">
 					<h7>Console</h7>
@@ -247,7 +260,7 @@
 					<span class="glyphicon glyphicon-play"></span>
 				</button>
 
-				<button type="button" class="btn btn-default" class="col-sm-1">
+				<button type="button" class="btn btn-default" class="col-sm-1" id = "save-spell">
 					<span class="glyphicon glyphicon-floppy-disk"></span>
 				</button>
 			</div>
