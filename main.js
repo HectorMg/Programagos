@@ -146,20 +146,27 @@ window.onload = function(){
 		//Hides highscores menu
 		document.getElementById("highscores").className += ' hidden';
 	}
-	//Code editor
-	var toggleEditor = false;
 
-	//Shows code editor
+	//EditorOpener
 	document.getElementById("editor").onclick = function(){
-		if(toggleEditor){
-			document.getElementById('contain-editor').className = "container hidden";
-			toggleEditor = false;
-		}
-		else{
-			document.getElementById('contain-editor').className = "container";
-			toggleEditor = true;
-		}
+		var editoropener = global.engine.find("editorOpener");
+		editoropener.open();
 	}
+
+	// //Code editor
+	// var toggleEditor = false;
+	//
+	// //Shows code editor
+	// document.getElementById("editor").onclick = function(){
+	// 	if(toggleEditor){
+	// 		document.getElementById('contain-editor').className = "container hidden";
+	// 		toggleEditor = false;
+	// 	}
+	// 	else{
+	// 		document.getElementById('contain-editor').className = "container";
+	// 		toggleEditor = true;
+	// 	}
+	// }
 
 	//Spell Book
 	document.getElementById("spellbook").onclick = function(){
@@ -215,6 +222,9 @@ window.onload = function(){
 
 	//Send code
 	document.getElementById("send-code").onclick = function(){
+		var editoropener = global.engine.find("editorOpener");
+		editoropener.open();
+		
 		var tm  = global.engine.find("turnManager");
 		var player = tm.players[tm.activePlayer];
 		player.castSpellScript(document.getElementById("console").value);
